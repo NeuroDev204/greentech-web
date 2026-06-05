@@ -8,7 +8,6 @@ import {
   Droplets,
   FileText,
 } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 const icons = [Wrench, Settings, ClipboardCheck, Zap, Droplets, FileText];
@@ -36,7 +35,6 @@ export default function ServicesGrid() {
   return (
     <section className="py-20 px-6 lg:px-8 border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel>{t("svcLbl")}</SectionLabel>
         <div className="flex flex-col lg:flex-row justify-between gap-6 mb-12">
           <div>
             <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 tracking-tight leading-tight mb-3">

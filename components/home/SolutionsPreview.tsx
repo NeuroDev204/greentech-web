@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Sun, Cpu, BatteryCharging, ArrowRight } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 export default function SolutionsPreview() {
@@ -40,66 +39,73 @@ export default function SolutionsPreview() {
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-8 bg-gray-950">
+    <section className="py-20 px-6 lg:px-8 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <SectionLabel className="text-green-500 [&>span]:text-green-400">
-              {t("solLbl")}
-            </SectionLabel>
-            <h2 className="text-[32px] sm:text-[40px] font-black text-white leading-tight tracking-tight mb-3">
+            <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 leading-tight tracking-tight mb-3">
               {t("solTtl")}
             </h2>
-            <p className="text-[15px] text-gray-400 max-w-lg leading-relaxed">
+            <p className="text-[15px] text-gray-500 max-w-lg leading-relaxed">
               {t("solDsc")}
             </p>
           </div>
           <Link
             href="/solutions"
-            className="flex-shrink-0 inline-flex items-center gap-2 text-[13px] font-semibold text-green-400 hover:text-green-300 transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-2 text-[13px] font-semibold text-green-700 hover:text-green-600 transition-colors"
           >
             Xem tất cả <ArrowRight size={14} />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cards.map(({ icon: Icon, title, tags, dKey, iconColor, iconBg, featured }) => (
+          {cards.map(({ icon: Icon, title, tags, dKey, color, iconColor, iconBg, featured }) => (
             <div
               key={title}
               className={`
-                relative rounded-2xl p-7 border transition-all card-hover
+                relative rounded-2xl overflow-hidden border transition-all card-hover
                 ${featured
-                  ? "bg-green-600 border-green-500 shadow-xl shadow-green-900/40"
-                  : "bg-gray-900 border-gray-800 hover:border-gray-700"
+                  ? "bg-green-600 border-green-400 shadow-2xl shadow-green-200/70 scale-[1.02]"
+                  : "bg-white border-gray-200 hover:border-green-300 hover:shadow-lg hover:shadow-green-50 shadow-md"
                 }
               `}
             >
-              {featured && (
-                <div className="absolute top-4 right-4 text-[9px] font-bold tracking-widest text-green-200 bg-green-700/60 px-2.5 py-1 rounded-full">
-                  RECOMMENDED
-                </div>
+              {/* Top gradient band for non-featured */}
+              {!featured && (
+                <div className={`h-1.5 w-full bg-gradient-to-r ${color}`} />
               )}
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-6 ${featured ? "bg-white/20" : iconBg}`}>
-                <Icon size={20} className={featured ? "text-white" : iconColor} />
-              </div>
-              <h3 className={`text-[15px] font-bold mb-3 ${featured ? "text-white" : "text-gray-100"}`}>
-                {title}
-              </h3>
-              <p className={`text-[13px] leading-relaxed mb-5 ${featured ? "text-green-100" : "text-gray-400"}`}>
-                {t(dKey)}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`
-                      text-[9px] font-bold tracking-wider px-2.5 py-1 rounded-full
-                      ${featured ? "bg-white/20 text-green-100" : "bg-gray-800 text-gray-500 border border-gray-700"}
-                    `}
-                  >
-                    {tag}
-                  </span>
-                ))}
+
+              <div className="p-7">
+                {featured && (
+                  <div className="absolute top-4 right-4 text-[9px] font-bold tracking-widest text-green-100 bg-white/20 px-2.5 py-1 rounded-full">
+                    RECOMMENDED
+                  </div>
+                )}
+
+                <div className={`w-13 h-13 w-[52px] h-[52px] rounded-2xl flex items-center justify-center mb-5 shadow-sm
+                  ${featured ? "bg-white/25" : `bg-gradient-to-br ${color} border border-white`}`}>
+                  <Icon size={22} className={featured ? "text-white" : iconColor} strokeWidth={1.8} />
+                </div>
+
+                <h3 className={`text-[16px] font-bold mb-2.5 ${featured ? "text-white" : "text-gray-900"}`}>
+                  {title}
+                </h3>
+                <p className={`text-[13px] leading-relaxed mb-6 ${featured ? "text-green-100" : "text-gray-500"}`}>
+                  {t(dKey)}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`
+                        text-[9px] font-bold tracking-wider px-2.5 py-1 rounded-full
+                        ${featured ? "bg-white/20 text-green-100" : "bg-gray-100 text-gray-600 border border-gray-200"}
+                      `}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

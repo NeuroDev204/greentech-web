@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-950 text-gray-400">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
 
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -63,19 +63,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Certifications */}
-          <div>
-            <h4 className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mb-4">Certifications</h4>
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 border border-green-800 rounded-lg px-3 py-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <span className="text-[12px] font-bold text-green-400">TÜV SÜD</span>
-              </div>
-              <p className="text-[12px] text-gray-600 leading-relaxed">
-                {t("chIntro").split(".")[0]}.
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Bottom bar */}

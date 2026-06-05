@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Home, Factory, SunMedium } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 export default function CustomerScale() {
@@ -35,7 +34,6 @@ export default function CustomerScale() {
   return (
     <section className="py-20 px-6 lg:px-8 border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel>{t("scLbl")}</SectionLabel>
         <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 tracking-tight leading-tight mb-3">
           {t("scTtl")}
         </h2>

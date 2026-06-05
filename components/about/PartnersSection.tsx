@@ -1,6 +1,5 @@
 "use client";
 
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 const inverters = ["Huawei Solar", "SMA", "Sungrow", "Growatt", "Fronius", "GoodWe"];
@@ -12,7 +11,6 @@ export default function PartnersSection() {
   return (
     <section className="py-20 px-6 lg:px-8 bg-gray-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel>{t("ptLbl")}</SectionLabel>
         <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 tracking-tight leading-tight mb-3">
           {t("ptTtl")}
         </h2>

@@ -1,7 +1,6 @@
 "use client";
 
 import { Eye, Target, Heart, ShieldCheck, Clock, Leaf } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 const valueIcons = [ShieldCheck, Eye, Clock, Leaf];
@@ -29,7 +28,6 @@ export default function MissionVision() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <SectionLabel>{t("mvLbl")}</SectionLabel>
               <h2
                 className="text-[32px] sm:text-[42px] font-black text-gray-900 tracking-tight leading-tight mb-8"
                 dangerouslySetInnerHTML={{ __html: t("mvTtl").replace("\n", "<br/>") }}
@@ -53,7 +51,6 @@ export default function MissionVision() {
 
             {/* Core Values */}
             <div>
-              <SectionLabel>{t("cvLbl")}</SectionLabel>
               <h2 className="text-[28px] font-black text-gray-900 tracking-tight leading-tight mb-8 sr-only">
                 Core Values
               </h2>

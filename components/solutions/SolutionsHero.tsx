@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 export default function SolutionsHero() {
@@ -21,9 +20,6 @@ export default function SolutionsHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900" />
       </div>
       <div className="relative max-w-7xl mx-auto">
-        <SectionLabel className="[&>span]:text-green-400">
-          {t("solPgLbl")}
-        </SectionLabel>
         <h1 className="text-[40px] sm:text-[56px] font-black text-white tracking-tight leading-tight mb-4">
           {t("solPgH")}
         </h1>

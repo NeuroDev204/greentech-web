@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 const serviceImages = [
@@ -26,7 +25,6 @@ export default function FeaturedServices() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <SectionLabel>{t("svcLbl")}</SectionLabel>
             <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 tracking-tight leading-tight">
               {t("svcTtl")}
             </h2>

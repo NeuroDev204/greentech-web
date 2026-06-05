@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Award, Info } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 const removalProducts = [

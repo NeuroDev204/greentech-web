@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ShieldCheck, Scale, RefreshCw, Clock } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
 import { useI18n } from "@/lib/i18n";
 
 const icons = [ShieldCheck, Scale, RefreshCw, Clock];
@@ -27,7 +26,6 @@ export default function WhyUs() {
   return (
     <section className="py-20 px-6 lg:px-8 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <SectionLabel>{t("whyLbl")}</SectionLabel>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
             <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 leading-tight tracking-tight mb-3">
