@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MessageSquare, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export default function ContactForm() {
@@ -74,7 +74,7 @@ export default function ContactForm() {
               </a>
 
               <a
-                href="tel:+84xxxxxxxxx"
+                href="tel:+840337642691"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
@@ -83,20 +83,10 @@ export default function ContactForm() {
                 <div>
                   <div className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold mb-0.5">Phone</div>
                   <div className="text-[14px] text-gray-700 group-hover:text-green-700 transition-colors font-medium">
-                    +84 (0) xxx xxx xxx
+                    033 764 2691
                   </div>
                 </div>
               </a>
-
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
-                  <MessageSquare size={16} className="text-green-600" />
-                </div>
-                <div>
-                  <div className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold mb-0.5">Zalo / WhatsApp</div>
-                  <div className="text-[14px] text-gray-700 font-medium">+84 (0) xxx xxx xxx</div>
-                </div>
-              </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0">
@@ -105,8 +95,8 @@ export default function ContactForm() {
                 <div>
                   <div className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold mb-0.5">Address</div>
                   <div className="text-[14px] text-gray-700 font-medium leading-snug">
-                    Topaz Home 2, Block 2<br />
-                    <span className="text-gray-500 text-[13px]">TP. Thủ Đức, TP. Hồ Chí Minh</span>
+                    Số 1B, Đường số 30, KP 27<br />
+                    <span className="text-gray-500 text-[13px]">P. An Khánh, TP. Hồ Chí Minh</span>
                   </div>
                 </div>
               </div>

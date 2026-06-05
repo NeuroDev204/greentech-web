@@ -38,13 +38,13 @@ export default function Footer() {
                 <Mail size={14} className="text-green-500 flex-shrink-0" />
                 info@greentech.vn
               </a>
-              <a href="tel:+84xxxxxxxxx" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
+              <a href="tel:+840337642691" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
                 <Phone size={14} className="text-green-500 flex-shrink-0" />
-                +84 (0) xxx xxx xxx
+                033 764 2691
               </a>
               <div className="flex items-center gap-2.5 text-[13px]">
                 <MapPin size={14} className="text-green-500 flex-shrink-0" />
-                Topaz Home 2, Block 2, TP. Thủ Đức, TP.HCM
+                Số 1B, Đường số 30, KP 27, P. An Khánh, TP.HCM
               </div>
             </div>
           </div>

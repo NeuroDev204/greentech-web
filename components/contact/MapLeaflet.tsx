@@ -13,12 +13,12 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 /* ── Location ─────────────────────────────────────────── */
-const LAT  = 10.8638633;
-const LNG  = 106.8101424;
+const LAT  = 10.7915481;
+const LNG  = 106.7289983;
 const ZOOM = 17;
 
 const GMAPS =
-  "https://www.google.com/maps/place/Topaz+home+2+block+2/@10.8638633,106.8101424,17z";
+  "https://www.google.com/maps?q=10.7915481,106.7289983";
 
 /* ── Custom pulsing pin ───────────────────────────────── */
 const pinHtml = `
@@ -146,8 +146,8 @@ export default function MapLeaflet({ height = "480px" }: MapLeafletProps) {
 
               {/* Address */}
               <div style={{ fontSize:12, color:"#6b7280", lineHeight:1.6, marginBottom:10 }}>
-                📍 Topaz Home 2, Block 2<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;TP. Thủ Đức, TP. Hồ Chí Minh
+                📍 Số 1B, Đường số 30, KP 27<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;P. An Khánh, TP. Hồ Chí Minh
               </div>
 
               {/* Actions */}
@@ -212,7 +212,7 @@ export default function MapLeaflet({ height = "480px" }: MapLeafletProps) {
           <span style={{ fontSize:12, fontWeight:700, color:"#111827" }}>GreenTech Solution</span>
         </div>
         <p style={{ fontSize:11, color:"#6b7280", margin:0, lineHeight:1.5 }}>
-          Topaz Home 2, Block 2<br />TP. Thủ Đức, TP.HCM
+          Số 1B, Đường số 30, KP 27<br />P. An Khánh, TP. Hồ Chí Minh
         </p>
       </div>
     </div>

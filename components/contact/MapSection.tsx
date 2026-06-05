@@ -17,7 +17,7 @@ const MapLeaflet = dynamic(() => import("./MapLeaflet"), {
 });
 
 const GMAPS_URL =
-  "https://www.google.com/maps/place/Topaz+home+2+block+2/@10.8638633,106.8101424,17z";
+  "https://www.google.com/maps?q=10.7915481,106.7289983";
 
 export default function MapSection() {
   return (
@@ -35,10 +35,10 @@ export default function MapSection() {
                 VỊ TRÍ VĂN PHÒNG
               </div>
               <h2 className="text-[18px] font-bold text-gray-900 leading-tight">
-                Topaz Home 2, Block 2
+                Số 1B, Đường số 30, KP 27
               </h2>
               <p className="text-[13px] text-gray-500 mt-0.5">
-                TP. Thủ Đức, TP. Hồ Chí Minh, Việt Nam
+                Phường An Khánh, TP. Hồ Chí Minh, Việt Nam
               </p>
             </div>
           </div>
@@ -60,9 +60,9 @@ export default function MapSection() {
         {/* Address chips */}
         <div className="mt-5 flex flex-wrap gap-3">
           {[
-            { icon: "📍", text: "Topaz Home 2, Block 2, TP. Thủ Đức, TP.HCM" },
+            { icon: "📍", text: "Số 1B, Đường số 30, KP 27, P. An Khánh, TP.HCM" },
             { icon: "✉️", text: "info@greentech.vn" },
-            { icon: "📞", text: "+84 (0) xxx xxx xxx" },
+            { icon: "📞", text: "033 764 2691" },
           ].map(({ icon, text }) => (
             <div
               key={text}
