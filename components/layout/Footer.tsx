@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Zap, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export default function Footer() {
@@ -23,9 +24,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <Zap className="text-white" size={18} strokeWidth={2.5} />
-              </div>
+              <Image
+                src="/logo-mark.png"
+                alt="GreenTech logo"
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-lg bg-white object-contain"
+              />
               <span className="text-[16px] font-bold text-white">
                 Green<span className="text-green-500">Tech</span> Solution
               </span>
@@ -34,9 +39,9 @@ export default function Footer() {
               {t("abP")}
             </p>
             <div className="space-y-2.5">
-              <a href="mailto:info@greentech.vn" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
+              <a href="mailto:info@gtsol.vn" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
                 <Mail size={14} className="text-green-500 flex-shrink-0" />
-                info@greentech.vn
+                info@gtsol.vn
               </a>
               <a href="tel:+840337642691" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
                 <Phone size={14} className="text-green-500 flex-shrink-0" />

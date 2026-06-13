@@ -70,23 +70,6 @@ export default function Hero() {
               <ChevronRight size={16} />
             </Link>
           </div>
-
-          {/* Stats row */}
-          <div className="mt-16 flex flex-wrap gap-8">
-            {(
-              [
-                ["stat1n", "stat1l"],
-                ["stat2n", "stat2l"],
-                ["stat3n", "stat3l"],
-                ["stat4n", "stat4l"],
-              ] as [string, string][]
-            ).map(([nk, lk]) => (
-              <div key={nk} className="flex flex-col">
-                <span className="text-[28px] font-black text-green-400 leading-none">{t(nk)}</span>
-                <span className="text-[12px] text-gray-500 mt-1 leading-tight">{t(lk)}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

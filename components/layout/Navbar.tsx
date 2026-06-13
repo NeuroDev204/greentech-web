@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export default function Navbar() {
@@ -28,9 +29,14 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-          <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center shadow-sm group-hover:bg-green-700 transition-colors">
-            <Zap className="w-4.5 h-4.5 text-white" strokeWidth={2.5} size={18} />
-          </div>
+          <Image
+            src="/logo-mark.png"
+            alt="GreenTech logo"
+            width={36}
+            height={36}
+            priority
+            className="w-9 h-9 rounded-lg object-contain"
+          />
           <span className="text-[15px] font-bold text-gray-900 tracking-tight">
             Green<span className="text-green-600">Tech</span>
           </span>

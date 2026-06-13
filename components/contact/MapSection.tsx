@@ -61,7 +61,7 @@ export default function MapSection() {
         <div className="mt-5 flex flex-wrap gap-3">
           {[
             { icon: "📍", text: "Số 1B, Đường số 30, KP 27, P. An Khánh, TP.HCM" },
-            { icon: "✉️", text: "info@greentech.vn" },
+            { icon: "✉️", text: "info@gtsol.vn" },
             { icon: "📞", text: "033 764 2691" },
           ].map(({ icon, text }) => (
             <div

@@ -24,16 +24,6 @@ export const translations: Translations = {
   heroCta1:   ["Nhận tư vấn miễn phí",  "Free Consultation"],
   heroCta2:   ["Xem dịch vụ",           "Our Services"],
 
-  /* HERO STATS */
-  stat1n:  ["500+",     "500+"],
-  stat1l:  ["Dự án hoàn thành",          "Projects completed"],
-  stat2n:  ["10+",      "10+"],
-  stat2l:  ["Năm kinh nghiệm",           "Years of experience"],
-  stat3n:  ["50 MWp+",  "50 MWp+"],
-  stat3l:  ["Công suất lắp đặt",         "Installed capacity"],
-  stat4n:  ["18",       "18"],
-  stat4l:  ["Nhà sản xuất PV phê duyệt", "PV manufacturers approved"],
-
   /* WHY US */
   whyLbl:  ["TẠI SAO CHỌN CHÚNG TÔI",  "WHY GREENTECH"],
   whyTtl:  ["Cam kết của GreenTech",    "Our Commitment"],

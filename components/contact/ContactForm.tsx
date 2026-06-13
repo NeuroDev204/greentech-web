@@ -7,6 +7,8 @@ import { useI18n } from "@/lib/i18n";
 export default function ContactForm() {
   const { t, lang } = useI18n();
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -41,9 +43,25 @@ export default function ContactForm() {
 
   const hours = t("whT").split("|").map((s) => s.trim());
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("send_failed");
+      setSubmitted(true);
+    } catch {
+      setError(lang === "vi"
+        ? "Gửi thất bại. Vui lòng thử lại hoặc liên hệ trực tiếp qua điện thoại."
+        : "Failed to send. Please try again or contact us directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -59,7 +77,7 @@ export default function ContactForm() {
 
             <div className="space-y-4 mb-10">
               <a
-                href="mailto:info@greentech.vn"
+                href="mailto:info@gtsol.vn"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
@@ -68,7 +86,7 @@ export default function ContactForm() {
                 <div>
                   <div className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold mb-0.5">Email</div>
                   <div className="text-[14px] text-gray-700 group-hover:text-green-700 transition-colors font-medium">
-                    info@greentech.vn
+                    info@gtsol.vn
                   </div>
                 </div>
               </a>
@@ -216,11 +234,18 @@ export default function ContactForm() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-[14px] py-4 rounded-xl transition-colors shadow-lg shadow-green-200"
+                  disabled={sending}
+                  className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white font-bold text-[14px] py-4 rounded-xl transition-colors shadow-lg shadow-green-200"
                 >
-                  {t("fmBtn")}
-                  <Send size={16} />
+                  {sending
+                    ? (lang === "vi" ? "Đang gửi..." : "Sending...")
+                    : t("fmBtn")}
+                  {!sending && <Send size={16} />}
                 </button>
+
+                {error && (
+                  <p className="text-[13px] text-red-500 text-center leading-relaxed">{error}</p>
+                )}
 
                 <p className="text-[12px] text-gray-400 text-center leading-relaxed">
                   {t("fmNote")}
