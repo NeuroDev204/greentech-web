@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gtsol.vn"),
   title: {
     default: "GreenTech Solution — Solar Energy Engineering Vietnam",
     template: "%s | GreenTech Solution",
