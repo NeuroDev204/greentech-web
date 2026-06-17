@@ -6,12 +6,13 @@ import HomeCtaBanner from "@/components/home/HomeCtaBanner";
 
 export default function HomePage() {
   return (
+
     <>
       <Hero />
       <WhyUs />
       <FeaturedServices />
       <SolutionsPreview />
-<HomeCtaBanner />
+      <HomeCtaBanner />
     </>
   );
 }
