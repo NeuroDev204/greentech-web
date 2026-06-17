@@ -9,10 +9,12 @@ export async function POST(req: NextRequest) {
   }
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
+      pass: (process.env.GMAIL_APP_PASSWORD ?? "").replace(/\s/g, ""),
     },
   });
 
@@ -47,7 +49,7 @@ export async function POST(req: NextRequest) {
   try {
     await transporter.sendMail({
       from: `"GreenTech Website" <${process.env.GMAIL_USER}>`,
-      to: "phamvansy204@gmail.com",
+      to: "info@gtsol.vn",
       replyTo: email,
       subject: `[GreenTech] Yêu cầu tư vấn từ ${name} — ${service}`,
       html,

@@ -1,15 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { MapPin, ExternalLink } from "lucide-react";
+import { MapPin, ExternalLink, Mail, Phone } from "lucide-react";
 
 /* Dynamic import — Leaflet requires browser APIs, cannot run on server */
 const MapLeaflet = dynamic(() => import("./MapLeaflet"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[420px] rounded-2xl bg-gray-100 flex items-center justify-center border border-gray-100 animate-pulse">
-      <div className="flex flex-col items-center gap-3 text-gray-400">
-        <MapPin size={32} className="text-gray-300" />
+    <div className="w-full h-[420px] rounded-[2rem] bg-[#f8f6ef] flex items-center justify-center animate-pulse">
+      <div className="flex flex-col items-center gap-3 text-stone-400">
+        <MapPin size={32} className="text-stone-300" />
         <span className="text-[13px]">Đang tải bản đồ...</span>
       </div>
     </div>
@@ -21,23 +21,23 @@ const GMAPS_URL =
 
 export default function MapSection() {
   return (
-    <section className="py-16 px-6 lg:px-8 bg-gray-50 border-t border-gray-100">
+    <section className="py-20 px-6 lg:px-8 bg-white border-t border-stone-200/60">
       <div className="max-w-7xl mx-auto">
 
         {/* Section header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center">
-              <MapPin size={17} className="text-green-600" />
+            <div className="w-11 h-11 rounded-2xl bg-green-100 flex items-center justify-center">
+              <MapPin size={17} className="text-green-700" />
             </div>
             <div>
-              <div className="text-[10px] font-bold text-gray-400 tracking-widest uppercase mb-0.5">
+              <div className="text-[10px] font-bold text-stone-400 tracking-widest uppercase mb-0.5">
                 VỊ TRÍ VĂN PHÒNG
               </div>
-              <h2 className="text-[18px] font-bold text-gray-900 leading-tight">
+              <h2 className="text-[18px] font-bold text-stone-800 leading-tight">
                 Số 1B, Đường số 30, KP 27
               </h2>
-              <p className="text-[13px] text-gray-500 mt-0.5">
+              <p className="text-[13px] text-stone-500 mt-0.5">
                 Phường An Khánh, TP. Hồ Chí Minh, Việt Nam
               </p>
             </div>
@@ -60,15 +60,15 @@ export default function MapSection() {
         {/* Address chips */}
         <div className="mt-5 flex flex-wrap gap-3">
           {[
-            { icon: "📍", text: "Số 1B, Đường số 30, KP 27, P. An Khánh, TP.HCM" },
-            { icon: "✉️", text: "info@gtsol.vn" },
-            { icon: "📞", text: "033 764 2691" },
-          ].map(({ icon, text }) => (
+            { Icon: MapPin, text: "Số 1B, Đường số 30, KP 27, P. An Khánh, TP.HCM" },
+            { Icon: Mail, text: "info@gtsol.vn" },
+            { Icon: Phone, text: "033 764 2691" },
+          ].map(({ Icon, text }) => (
             <div
               key={text}
-              className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-[13px] text-gray-600 shadow-sm"
+              className="flex items-center gap-2 bg-white rounded-full px-4 py-2 text-[13px] text-stone-600 clay-sm"
             >
-              <span>{icon}</span>
+              <Icon size={14} className="text-green-600 flex-shrink-0" />
               <span>{text}</span>
             </div>
           ))}

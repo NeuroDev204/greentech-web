@@ -9,6 +9,8 @@ import {
   FileText,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { tagLabel } from "@/lib/tags";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 const icons = [Wrench, Settings, ClipboardCheck, Zap, Droplets, FileText];
 const tags = [
@@ -21,7 +23,7 @@ const tags = [
 ];
 
 export default function ServicesGrid() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   const items = [
     { tKey: "sv1t", dKey: "sv1d" },
@@ -33,34 +35,32 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-8 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between gap-6 mb-12">
-          <div>
-            <h2 className="text-[32px] sm:text-[40px] font-black text-gray-900 tracking-tight leading-tight mb-3">
-              {t("svcTtl")}
-            </h2>
-            <p className="text-[15px] text-gray-500 max-w-xl leading-relaxed">
-              {t("svcDsc")}
-            </p>
-          </div>
+    <section className="relative py-24 lg:py-32 px-6 lg:px-8 bg-white overflow-hidden">
+      <div className="pointer-events-none absolute -top-24 right-0 w-[26rem] h-[26rem] blob bg-green-50 blur-2xl" />
+      <div className="relative max-w-7xl mx-auto">
+        <div className="max-w-2xl mb-16">
+          <SectionLabel>{t("svcLbl")}</SectionLabel>
+          <h2 className="text-[34px] sm:text-[48px] font-black text-stone-800 tracking-[-0.03em] leading-[1.03] mb-4">
+            {t("svcTtl")}
+          </h2>
+          <p className="text-[16px] text-stone-500 leading-relaxed">{t("svcDsc")}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ tKey, dKey }, i) => {
             const Icon = icons[i];
             return (
               <div
                 key={tKey}
-                className="group p-7 rounded-2xl border border-gray-100 bg-white hover:border-green-200 hover:shadow-md hover:shadow-green-50 transition-all card-hover"
+                className="group flex flex-col p-8 rounded-[2rem] bg-[#f8f6ef] border border-stone-300/70 transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
               >
-                <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-5 group-hover:bg-green-100 transition-colors">
-                  <Icon size={20} className="text-green-600" />
+                <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6 transition-colors group-hover:bg-green-600">
+                  <Icon size={22} className="text-green-700 transition-colors group-hover:text-white" strokeWidth={1.9} />
                 </div>
-                <h3 className="text-[15px] font-bold text-gray-900 mb-2">{t(tKey)}</h3>
-                <p className="text-[13px] text-gray-500 leading-relaxed mb-4">{t(dKey)}</p>
-                <span className="inline-block text-[9px] font-bold tracking-widest text-green-700 bg-green-50 border border-green-100 px-2.5 py-1 rounded-full">
-                  {tags[i]}
+                <h3 className="text-[17px] font-bold text-stone-800 mb-2.5 leading-snug">{t(tKey)}</h3>
+                <p className="text-[13.5px] text-stone-500 leading-relaxed mb-6">{t(dKey)}</p>
+                <span className="mt-auto inline-block self-start text-[9px] font-bold tracking-widest text-green-800 bg-green-100 px-2.5 py-1 rounded-full">
+                  {tagLabel(tags[i], lang)}
                 </span>
               </div>
             );

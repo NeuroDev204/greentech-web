@@ -17,7 +17,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-950 text-gray-400">
+    <footer className="bg-green-950 text-green-200/70">
+      <div className="h-1.5 w-full bg-gradient-to-r from-amber-300 via-green-500 to-green-700" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
 
@@ -32,23 +33,23 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg bg-white object-contain"
               />
               <span className="text-[16px] font-bold text-white">
-                Green<span className="text-green-500">Tech</span> Solution
+                Green<span className="text-amber-300">Tech</span> Solution
               </span>
             </Link>
-            <p className="text-[13px] leading-relaxed max-w-xs text-gray-500 mb-6">
+            <p className="text-[13px] leading-relaxed max-w-xs text-green-200/60 mb-6">
               {t("abP")}
             </p>
             <div className="space-y-2.5">
-              <a href="mailto:info@gtsol.vn" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
-                <Mail size={14} className="text-green-500 flex-shrink-0" />
+              <a href="mailto:info@gtsol.vn" className="flex items-center gap-2.5 text-[13px] hover:text-amber-300 transition-colors">
+                <Mail size={14} className="text-green-400 flex-shrink-0" />
                 info@gtsol.vn
               </a>
-              <a href="tel:+840337642691" className="flex items-center gap-2.5 text-[13px] hover:text-green-400 transition-colors">
-                <Phone size={14} className="text-green-500 flex-shrink-0" />
+              <a href="tel:+840337642691" className="flex items-center gap-2.5 text-[13px] hover:text-amber-300 transition-colors">
+                <Phone size={14} className="text-green-400 flex-shrink-0" />
                 033 764 2691
               </a>
               <div className="flex items-center gap-2.5 text-[13px]">
-                <MapPin size={14} className="text-green-500 flex-shrink-0" />
+                <MapPin size={14} className="text-green-400 flex-shrink-0" />
                 Số 1B, Đường số 30, KP 27, P. An Khánh, TP.HCM
               </div>
             </div>
@@ -56,11 +57,11 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-[11px] font-bold text-gray-500 tracking-widest uppercase mb-4">Navigation</h4>
+            <h4 className="text-[11px] font-bold text-green-300/60 tracking-widest uppercase mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {links.map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="text-[13px] hover:text-green-400 transition-colors">
+                  <Link href={href} className="text-[13px] hover:text-amber-300 transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -71,13 +72,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <span className="text-[12px] text-gray-600">{t("ftCopy")}</span>
+        <div className="border-t border-green-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <span className="text-[12px] text-green-300/50">{t("ftCopy")}</span>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-[12px] hover:text-green-400 transition-colors">
+            <Link href="/privacy" className="text-[12px] hover:text-amber-300 transition-colors">
               {t("ftPriv")}
             </Link>
-            <Link href="/terms" className="text-[12px] hover:text-green-400 transition-colors">
+            <Link href="/terms" className="text-[12px] hover:text-amber-300 transition-colors">
               {t("ftTerms")}
             </Link>
           </div>

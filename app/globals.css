@@ -105,6 +105,42 @@ body {
   background: linear-gradient(135deg, #0f4c24 0%, #16a34a 60%, #166534 100%);
 }
 
+/* ─── Landing page (Organic / Eco) effects ──────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.animate-float { animation: floatY 7s ease-in-out infinite; }
+
+@keyframes swaySlow {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+.animate-sway { animation: swaySlow 9s ease-in-out infinite; transform-origin: top center; }
+
+/* soft "clay" shadows for the eco look */
+.clay {
+  box-shadow: 0 24px 50px -16px rgba(20, 83, 45, 0.22), 0 8px 18px -10px rgba(0, 0, 0, 0.06);
+}
+.clay-sm {
+  box-shadow: 0 12px 28px -14px rgba(20, 83, 45, 0.22), 0 4px 10px -8px rgba(0, 0, 0, 0.05);
+}
+
+/* organic blob radius */
+.blob {
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .animate-float, .animate-sway { animation: none !important; }
+}
+
 /* ─── Map pin pulse animation ───────────────────────── */
 @keyframes mapPulse {
   0%   { transform: translate(-50%, -70%) scale(0.5); opacity: 0.8; }
