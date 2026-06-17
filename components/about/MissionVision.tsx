@@ -2,6 +2,7 @@
 
 import { Eye, Target, Heart, ShieldCheck, Clock, Leaf } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 const valueIcons = [ShieldCheck, Eye, Clock, Leaf];
 
@@ -24,25 +25,27 @@ export default function MissionVision() {
   return (
     <>
       {/* Mission / Vision */}
-      <section className="py-20 px-6 lg:px-8 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <section className="relative py-24 lg:py-32 px-6 lg:px-8 bg-white overflow-hidden">
+        <div className="pointer-events-none absolute top-10 -left-24 w-[24rem] h-[24rem] blob bg-green-50 blur-2xl" />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
             <div>
+              <SectionLabel>{t("mvLbl")}</SectionLabel>
               <h2
-                className="text-[32px] sm:text-[42px] font-black text-gray-900 tracking-tight leading-tight mb-8"
+                className="text-[34px] sm:text-[46px] font-black text-stone-800 tracking-[-0.03em] leading-[1.03] mb-10"
                 dangerouslySetInnerHTML={{ __html: t("mvTtl").replace("\n", "<br/>") }}
               />
-              <div className="space-y-6">
+              <div className="space-y-7">
                 {mvItems.map(({ icon: Icon, lKey, tKey, color, bg }) => (
                   <div key={lKey} className="flex gap-4">
-                    <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
-                      <Icon size={18} className={color} />
+                    <div className={`w-11 h-11 rounded-2xl ${bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                      <Icon size={19} className={color} strokeWidth={1.9} />
                     </div>
                     <div>
-                      <div className="text-[11px] font-bold text-gray-400 tracking-widest uppercase mb-1">
+                      <div className="text-[11px] font-bold text-stone-400 tracking-widest uppercase mb-1.5">
                         {t(lKey)}
                       </div>
-                      <p className="text-[14px] text-gray-600 leading-relaxed">{t(tKey)}</p>
+                      <p className="text-[15px] text-stone-600 leading-relaxed">{t(tKey)}</p>
                     </div>
                   </div>
                 ))}
@@ -51,22 +54,20 @@ export default function MissionVision() {
 
             {/* Core Values */}
             <div>
-              <h2 className="text-[28px] font-black text-gray-900 tracking-tight leading-tight mb-8 sr-only">
-                Core Values
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <SectionLabel>{t("cvLbl")}</SectionLabel>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-4">
                 {coreValues.map(({ tKey, dKey }, i) => {
                   const Icon = valueIcons[i];
                   return (
                     <div
                       key={tKey}
-                      className="p-6 rounded-2xl border border-gray-100 bg-white hover:border-green-200 hover:shadow-sm transition-all group"
+                      className="group bg-[#f8f6ef] border border-stone-300/70 rounded-[2rem] p-7 transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
                     >
-                      <div className="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors">
-                        <Icon size={16} className="text-green-600" />
+                      <div className="w-11 h-11 rounded-2xl bg-green-100 flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
+                        <Icon size={18} className="text-green-700 transition-colors group-hover:text-white" strokeWidth={1.9} />
                       </div>
-                      <h3 className="text-[14px] font-bold text-gray-900 mb-2">{t(tKey)}</h3>
-                      <p className="text-[13px] text-gray-500 leading-relaxed">{t(dKey)}</p>
+                      <h3 className="text-[15px] font-bold text-stone-800 mb-2">{t(tKey)}</h3>
+                      <p className="text-[13.5px] text-stone-500 leading-relaxed">{t(dKey)}</p>
                     </div>
                   );
                 })}
