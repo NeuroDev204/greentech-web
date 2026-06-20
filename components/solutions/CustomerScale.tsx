@@ -49,7 +49,7 @@ export default function CustomerScale() {
           {scales.map(({ icon: Icon, tKey, dKey, tags, img }) => (
             <div
               key={tKey}
-              className="group flex flex-col md:flex-row gap-0 rounded-[2rem] overflow-hidden bg-[#f8f6ef] border border-stone-300/70 transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
+              className="group flex flex-col md:flex-row gap-0 rounded-[2rem] overflow-hidden bg-green-100 border border-green-400 shadow-[0_0_20px_rgba(22,163,74,0.2)] transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
             >
               {/* Image */}
               <div className="relative md:w-80 h-56 md:h-auto flex-shrink-0 overflow-hidden">
@@ -66,8 +66,8 @@ export default function CustomerScale() {
               {/* Content */}
               <div className="flex-1 p-8 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-11 h-11 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-green-600">
-                    <Icon size={19} className="text-green-700 transition-colors group-hover:text-white" strokeWidth={1.9} />
+                  <div className="w-11 h-11 rounded-2xl bg-green-600 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-green-600">
+                    <Icon size={19} className="text-white transition-colors group-hover:text-white" strokeWidth={1.9} />
                   </div>
                   <h3 className="text-[18px] font-bold text-stone-800">{t(tKey)}</h3>
                 </div>

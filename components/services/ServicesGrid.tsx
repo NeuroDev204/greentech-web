@@ -52,10 +52,10 @@ export default function ServicesGrid() {
             return (
               <div
                 key={tKey}
-                className="group flex flex-col p-8 rounded-[2rem] bg-[#f8f6ef] border border-stone-300/70 transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
+                className="group flex flex-col p-8 rounded-[2rem] bg-green-100 border border-green-400 shadow-[0_0_20px_rgba(22,163,74,0.2)] transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
               >
-                <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6 transition-colors group-hover:bg-green-600">
-                  <Icon size={22} className="text-green-700 transition-colors group-hover:text-white" strokeWidth={1.9} />
+                <div className="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center mb-6 transition-colors group-hover:bg-green-600">
+                  <Icon size={22} className="text-white transition-colors group-hover:text-white" strokeWidth={1.9} />
                 </div>
                 <h3 className="text-[17px] font-bold text-stone-800 mb-2.5 leading-snug">{t(tKey)}</h3>
                 <p className="text-[13.5px] text-stone-500 leading-relaxed mb-6">{t(dKey)}</p>

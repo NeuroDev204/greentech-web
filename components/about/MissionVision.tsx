@@ -61,10 +61,10 @@ export default function MissionVision() {
                   return (
                     <div
                       key={tKey}
-                      className="group bg-[#f8f6ef] border border-stone-300/70 rounded-[2rem] p-7 transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
+                      className="group bg-green-100 border border-green-400 shadow-[0_0_20px_rgba(22,163,74,0.2)] rounded-[2rem] p-7 transition-all duration-300 hover:bg-[#ece5d4] hover:border-green-500 hover:-translate-y-1.5 hover:clay"
                     >
-                      <div className="w-11 h-11 rounded-2xl bg-green-100 flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
-                        <Icon size={18} className="text-green-700 transition-colors group-hover:text-white" strokeWidth={1.9} />
+                      <div className="w-11 h-11 rounded-2xl bg-green-600 flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
+                        <Icon size={18} className="text-white transition-colors group-hover:text-white" strokeWidth={1.9} />
                       </div>
                       <h3 className="text-[15px] font-bold text-stone-800 mb-2">{t(tKey)}</h3>
                       <p className="text-[13.5px] text-stone-500 leading-relaxed">{t(dKey)}</p>

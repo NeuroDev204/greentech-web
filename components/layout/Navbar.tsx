@@ -51,7 +51,7 @@ export default function Navbar() {
                 className={`
                   relative px-4 py-2 text-[15px] font-medium rounded-full transition-colors
                   ${isActive(href)
-                    ? "text-green-800 bg-green-100"
+                    ? "text-white bg-green-600 shadow-sm"
                     : "text-stone-500 hover:text-stone-800 hover:bg-white/70"
                   }
                 `}
@@ -99,7 +99,7 @@ export default function Navbar() {
                 className={`
                   block px-4 py-2.5 text-[14px] font-medium rounded-full transition-colors
                   ${isActive(href)
-                    ? "text-green-800 bg-green-100"
+                    ? "text-white bg-green-600 shadow-sm"
                     : "text-stone-600 hover:text-stone-900 hover:bg-white/70"
                   }
                 `}
